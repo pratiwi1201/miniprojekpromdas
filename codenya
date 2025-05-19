@@ -7,86 +7,44 @@ int main() {
     int min = 1, max = 100;
     int selesai = 0;
 
-    // Inisialisasi random seed
     srand(time(NULL));
-    bomb = rand() % 100 + 1; // Angka bomb antara 1-100
+    bomb = rand() % 100 + 1; 
 
-    printf("+----------- Game Tebak Angka Bomb -----------+\n");
-    printf("Pilih angka antara 1 sampai 100.\n");
-    printf("Jangan sampai pilih angka bomb! yaa....\n\n");
+    printf("+---------- GAME TEBAK ANGKA BOMB !!! ----------+\n");
+    printf("|                                               |\n");
+    printf("|       Pilih angka antara 1 sampai 100.        |\n");
+    printf("|                                               |\n");
+    printf("|   Jangan sampai pilih angka bomb! yaa....     |\n");
+    printf("+-----------------------------------------------+\n\n\n");
 
     while (!selesai) {
-        printf("Tebak angka antara %d sampai %d: ", min, max);
+        printf("Pilih angka antara %d sampai %d :  ", min, max);
         scanf("%d", &tebakan);
 
-        // Cek validitas input
         if (tebakan < min || tebakan > max) {
             printf("Tebakan di luar rentang! Coba lagi.\n");
             continue;
         }
 
-        // Cek apakah kena bomb
         if (tebakan == bomb) {
-            printf("BOMB! Kamu kalah :(\n");
+            printf("\n");
+            printf("+-----------------------------------------------+\n");
+            printf("|                                               |\n");
+            printf("|           BOMB!!!! YAHKAMU KALAH              |\n");
+            printf("|          ANGKA BOMB NYA ADALAH %d.            |\n", tebakan);
+            printf("|                                               |\n");
+            printf("+-----------------------------------------------+\n\n\n");
             selesai = 1;
         } else {
-            printf("Selamat, kamu aman!\n");
-            // Persempit rentang
+            printf("Selamat, kamu aman!\n\n");
+        
             if (tebakan < bomb) {
-                min = tebakan ;
+                min = tebakan + 1;
             } else {
-                max = tebakan ;
+                max = tebakan - 1;
             }
-            // Cek kalau rentang sudah habis
-            if (min > max) {
-                printf("Selamat! Kamu berhasil menghindari bomb!\n");
-                selesai = 1;
-            }
-        }
-    }
-    printf("Angka bomb tadi adalah: %d\n", bomb);
-    return 0;
-}#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-int main() {
-    int bomb, tebakan;
-    int min = 1, max = 100;
-    int selesai = 0;
-
-    // Inisialisasi random seed
-    srand(time(NULL));
-    bomb = rand() % 100 + 1; // Angka bomb antara 1-100
-
-    printf("+----------- Game Tebak Angka Bomb -----------+\n");
-    printf("Pilih angka antara 1 sampai 100.\n");
-    printf("Jangan sampai pilih angka bomb! yaa....\n\n");
-
-    while (!selesai) {
-        printf("Tebak angka antara %d sampai %d: ", min, max);
-        scanf("%d", &tebakan);
-
-        // Cek validitas input
-        if (tebakan < min || tebakan > max) {
-            printf("Tebakan di luar rentang! Coba lagi.\n");
-            continue;
-        }
-
-        // Cek apakah kena bomb
-        if (tebakan == bomb) {
-            printf("BOMB! Kamu kalah :(\n");
-            selesai = 1;
-        } else {
-            printf("Selamat, kamu aman!\n");
-            // Persempit rentang
-            if (tebakan < bomb) {
-                min = tebakan ;
-            } else {
-                max = tebakan ;
-            }
-            // Cek kalau rentang sudah habis
-            if (min > max) {
+            
+            if (min == max) {
                 printf("Selamat! Kamu berhasil menghindari bomb!\n");
                 selesai = 1;
             }
