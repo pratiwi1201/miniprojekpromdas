@@ -34,7 +34,7 @@ int main() {
             printf("\n");
             printf("+-----------------------------------------------+\n");
             printf("|                                               |\n");
-            printf("|           BOMB!!!! YAHKAMU KALAH              |\n");
+            printf("|           BOMB!!!! YAH KAMU KALAH             |\n");
             printf("|          ANGKA BOMB NYA ADALAH %d.            |\n", tebakan);
             printf("|                                               |\n");
             printf("+-----------------------------------------------+\n\n\n");
