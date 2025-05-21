@@ -6,6 +6,7 @@ int main() {
     int bomb, tebakan;
     int min = 1, max = 100;
     int selesai = 0;
+    int jumlahTebakan = 0;
 
     srand(time(NULL));
     bomb = rand() % 100 + 1; 
@@ -27,6 +28,8 @@ int main() {
             continue;
         }
 
+        jumlahTebakan ++;
+
         if (tebakan == bomb) {
             printf("\n");
             printf("+-----------------------------------------------+\n");
@@ -37,7 +40,11 @@ int main() {
             printf("+-----------------------------------------------+\n\n\n");
             selesai = 1;
         } else {
-            printf("Selamat, kamu aman!\n\n");
+            printf("kamu berhasil menebak sebanyak : %d\n", jumlahTebakan);
+            printf("+-------------------------------------------+\n");
+            printf("|           SELAMAT, KAMU AMAN!             |\n");
+            printf("+-------------------------------------------+\n\n\n");
+            
         
             if (tebakan < bomb) {
                 min = tebakan + 1;
@@ -46,11 +53,25 @@ int main() {
             }
             
             if (min == max) {
-                printf("Selamat! Kamu berhasil menghindari bomb!\n");
+                printf("+-----------------------------------------------+\n");
+                printf("|  SELAMAT! kamu berhasil menghindari angkanya  |\n");
+                printf("+-----------------------------------------------+\n\n\n");
+               
                 selesai = 1;
             }
         }
     }
-    printf("Angka BOMB tadi adalah: %d\n", bomb);
+        
+    printf("Angka BOMB tadi adalah: %d\n\n\n", bomb);
+    printf("Kamu Berhasil Menebak Sebanyak : %d\n", jumlahTebakan);
+
+    if (jumlahTebakan >=5) {
+        printf("KEREN.....kamu raja banget sih di game ini kamu bisa %d tebakan * w *\n", jumlahTebakan);
+    }
+
+    else 
+    {
+        printf("YAH... sayang kamu cuma nebak %d, yu main lagi * 3 *\n", jumlahTebakan);
+    }
     return 0;
 }
