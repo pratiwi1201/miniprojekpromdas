@@ -10,6 +10,7 @@ int main() {
     srand(time(NULL));
     bomb = rand() % 100 + 1; 
 
+    printf("\n");
     printf("+---------- GAME TEBAK ANGKA BOMB !!! ----------+\n");
     printf("|                                               |\n");
     printf("|       Pilih angka antara 1 sampai 100.        |\n");
@@ -50,6 +51,6 @@ int main() {
             }
         }
     }
-    printf("Angka bomb tadi adalah: %d\n", bomb);
+    printf("Angka BOMB tadi adalah: %d\n", bomb);
     return 0;
 }
