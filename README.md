@@ -12,7 +12,7 @@
 
 •	Nama: Salwa Aulia 
 
-•	Angkatan: 2023
+•	Angkatan: 2023 
 
 •	Program Studi: Pendidikan Sistem dan Teknologi Informasi
 
